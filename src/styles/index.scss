@@ -1,0 +1,203 @@
+@import './theme';
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 42px;
+  background-color: rgb(0 0 0 / 30%);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: rgb(0 0 0 / 10%);
+}
+
+
+.tz-btn {
+  &.ant-btn-primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: $primary-color;
+    border-radius: 6px;
+    padding: 16px 32px;
+    background: $primary-color;
+    box-shadow: 0 6px 10px rgb(87 98 114 / 5%), 0 3px 6px -4px rgb(87 98 114 / 5%);
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
+  }
+
+  &.ant-btn-primary:hover, .ant-btn-primary:focus {
+    border-color: $primary-color;
+    color: #fff;
+    background: $primary-color;
+  }
+}
+
+.tz-selector {
+  &.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    display: block;
+    border: 1px solid $color-border;
+    border-top: 1.02px solid $color-border;
+    border-radius: 4px;
+    background-color: #fff;
+    outline: none;
+    transition: all .3s cubic-bezier(.645,.045,.355,1);
+    box-sizing: border-box;
+    user-select: none;
+  }
+
+  &.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+    height: 34px;
+    line-height: 34px;
+  }
+
+  &.ant-select:not(.ant-select-disabled):hover .ant-select-selector {
+    border-color: $primary-color;
+  }
+
+  &.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border-color: $primary-color;
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+.tz-select-dropdown {
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+    color: $primary-color;
+    background-color: rgb(85 68 222 / 15%);
+  }
+
+  .ant-select-item {
+    padding: 11px 16px;
+  }
+
+  .ant-select-dropdown {
+    padding: 12px 0;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+.tz-input {
+  &.ant-input {
+    border-right-width: 1px!important;
+    border-radius: 12px;
+    padding: 6px 16px;
+    width: 100%;
+    height: 54px;
+    font-size: 16px;
+    text-align: center;
+    color: #000;
+
+    &:focus {
+      border-color: $primary-color;
+      box-shadow: none;
+    }
+
+    &:hover {
+      border-color: $primary-color;
+    }
+  }
+}
+
+.tz-date-picker {
+  border-radius: 12px;
+
+  &.ant-picker {
+    border-radius: 12px;
+    padding: 0 11px;
+
+    .ant-picker-input > input {
+      height: 54px;
+      font-size: 16px;
+
+      &:focus {
+        border-color: $primary-color;
+        box-shadow: none;
+      }
+
+      &:hover {
+        border-color: $primary-color;
+      }
+    }
+
+    .ant-picker-suffix {
+      font-size: 16px;
+    }
+  }
+}
+
+
+.ant-message {
+  position: fixed;
+  top: 8px;
+  z-index: 1010;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-size: 14px;
+  color: #000000d9;
+  list-style: none;
+  box-sizing: border-box;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  font-feature-settings: "tnum";
+  pointer-events: none;
+
+  .ant-message-notice {
+    padding: 8px;
+    text-align: center;
+  }
+
+  .ant-message-notice-content {
+    display: inline-block;
+    border-radius: 2px;
+    padding: 10px 16px;
+    background: #fff;
+    box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
+    pointer-events: all;
+
+    .ant-message-custom-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .anticon-close-circle {
+        margin-right: 12px;
+
+        svg {
+          path {
+            fill: $color-danger;
+          }
+        }
+      }
+
+      &.ant-message-success {
+        .anticon-check-circle {
+          margin-right: 12px;
+
+          svg {
+            path {
+              fill: $primary-color;
+            }
+          }
+        }
+      }
+
+      &.ant-message-info {
+        .anticon-info-circle {
+          margin-right: 12px;
+
+          svg {
+            path {
+              fill: $color-progress;
+            }
+          }
+        }
+      }
+    }
+  }
+}
