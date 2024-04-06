@@ -1,6 +1,7 @@
 import type { NuxtConfig } from '@nuxt/schema'
 export const createAppConfig = (): NuxtConfig['app'] => {
   const config: NuxtConfig['app'] = {
+    buildAssetsDir: '/static/',
     head: {
       title: 'Hank 懒人幸运选择器',
       meta: [
