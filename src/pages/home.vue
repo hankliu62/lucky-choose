@@ -73,7 +73,7 @@ const questionOptions = ref<{label: string, value: string}[]>(questions.map(({id
 const question = ref<string>('vacation')
 
 const questionName = computed<string>(() => {
-  return questionOptions.value?.find(({ value }) => value === question.value)?.label || ''
+  return questionOptions.value?.find(({ value }: typeof questionOptions.value[0]) => value === question.value)?.label || ''
 })
 
 const questionModalVisible = ref<boolean>(true)
@@ -211,7 +211,7 @@ async function onSubmit() {
   submitting.value = true
   const params = {
     type: question.value,
-    selectList: answers.value.map((item, index) => ({
+    selectList: answers.value.map((item: typeof answers.value[0], index: number) => ({
       content: item.value,
       selectTime: item.duration,
       sort: index + 1
@@ -287,7 +287,7 @@ const fortuneMax = computed(() => fortuneMaxName[result.value.fortuneMax as (key
           </div>
           <div class="form-control">
             <div
-              class="question-selector rounded-[12px] w-full h-[54px] text-center text-black bg-white shadow-[0_0_11px_rgb(255_255_255_/_70%)] leading-[54px]"
+              class="question-selector rounded-[12px] w-full h-[54px] text-center text-black bg-white shadow-[0_0_11px_rgb(255_255_255_/_70%)] leading-[54px] cursor-pointer"
               @click="onToggleQuestionModal"
               v-text="questionName"
             />
@@ -305,7 +305,7 @@ const fortuneMax = computed(() => fortuneMaxName[result.value.fortuneMax as (key
             <div
               v-for="{ label, value } in questionOptions"
               :key="value"
-              class="my-[8px] py-[10px] text-[20px] font-medium text-center text-white opacity-60"
+              class="my-[8px] py-[10px] text-[20px] font-medium text-center text-white opacity-60 cursor-pointer"
               :class="{['opacity-100']: question === value || !question}"
               @click="onChangeQuestion(value)"
             >
