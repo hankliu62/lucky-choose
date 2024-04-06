@@ -1,1 +1,0 @@
-import{_ as o}from"./CGLaA7pD.js";import{d as e,v as n,H as a,B as s,y as _}from"./BwAwIfRC.js";const c=_("div",{class:"block text-[16px]"}," NotFound Container ",-1),i=e({__name:"not-fount",setup(r){return(m,p)=>{const t=o;return n(),a(t,{name:"custom"},{default:s(()=>[c]),_:1})}}});export{i as default};
